@@ -1,7 +1,7 @@
 <h1>Click an Artist to view their songs</h1>
 <%= link_to 'New Artist', new_billboard_artist_path %>
-<ul> 
+<div class="ui raised segment">
 <% @billboard.artists.each do |artist| %>
 <%= link_to artist.name, [@billboard, artist] %>
 <% end %>
-</ul>
+</div>

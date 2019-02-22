@@ -10,6 +10,22 @@
   </head>
 
   <body>
+<div class="ui container">
+  <div class="ui massive top attached menu">
+    <div class="ui dropdown icon item">
+    <%= link_to 'Billboards', billboards_path %>
+    </div>
+    <div class="ui dropdown icon item">
+    <%= link_to 'Artists', artists_path %>
+    </div>
+    <div class="ui dropdown icon item">
+    <%= link_to 'Songs' %>
+    </div>
+    <div class="ui right floated dropdown icon item">
+      <%= link_to 'New Billboard', new_billboard_path %>
+    </div>
+  </div>    
     <%= yield %>
+    </div>
   </body>
 </html>
