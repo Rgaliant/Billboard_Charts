@@ -1,7 +1,15 @@
 <h1>Click an Artist to view their songs</h1>
 <%= link_to 'New Artist', new_billboard_artist_path %>
-<div class="ui raised segment">
+
+
 <% @billboard.artists.each do |artist| %>
+<div class="ui massive segment relaxed divided list"">
+<div class="image">
+    <img class="ui tiny avatar image" src="https://api.adorable.io/avatars/285/<%= artist.avatar %>.png/" />
+  
 <%= link_to artist.name, [@billboard, artist] %>
-<% end %>
 </div>
+</div>
+<% end %>
+
+

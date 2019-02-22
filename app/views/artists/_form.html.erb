@@ -1,10 +1,26 @@
 <h1><%= @artist.id ? 'Edit Artist' : 'Create Artist' %></h1>
 <hr />
+<div class="ui form">
 <%= form_for [@billboard, @artist] do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name, required: true, autofocus: true %>
 
    <%= f.label :genre %>
-  <%= f.text_field :genre, required: true, autofocus: true %>
-  <%= f.submit %>
+  <%= f.text_field :genre, required: true %>
+
+  <%= f.label :avatar %>
+  <%= f.text_field :avatar %>
+
+  <%= f.label :spot_on_charts %>
+  <%= f.text_field :spot_on_charts %>
+
+   <%= f.label :weeks_on_charts %>
+  <%= f.text_field :weeks_on_charts %>
+
+  <div class="field">
+    <%= f.label :about_artists %>
+    <%= f.text_field :about_artists %>
+    <%= f.submit %>
+  </div>
 <% end %>
+</div>

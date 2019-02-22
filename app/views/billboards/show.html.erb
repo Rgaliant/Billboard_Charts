@@ -3,10 +3,48 @@
 <h1><%= @billboard.name %></h1>
 <hr />
 
+<h1>Click an Artist to view their songs</h1>
+
+<% @billboard.artists.each do |artist| %>
+<div class="ui massive segment relaxed divided list"">
+  <div class="ui two column very relaxed grid">
+    <div class="column">
+      <div class="ui segment">
+        <h1>#<%= artist.spot_on_charts %></h1>
+          <img class="ui small avatar image" src="https://robohash.org/<%= artist.avatar %>?set=set2" />
+          <div class="content">
+          <a class="header">
+          <h2><%= link_to artist.name, [@billboard, artist] %></h2>
+            <div class="description">
+              <h3><%= artist.genre %></h3>
+              <br />
+              <h4>Weeks on Billboard: <%= artist.weeks_on_charts %></h4>
+              <h4><%= link_to "Songs", [@billboard, artist] %></h4>
+            </div>
+          </div>
+          </a>
+        </div>
+      </div>
+    <div class="column">
+      <div class="ui segment">
+      <h1><%= artist.name %></h1>
+      <br />
+      <%= artist.about_artists %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% end %>
+
 
 <p>What would you like to do?</p>
+<div class="ui segment">
 <%= link_to 'View Artists', billboard_artists_path(@billboard) %>
-<br />
+</div>
+<div class="ui segment">
 <%= link_to 'Edit Billboard', edit_billboard_path(@billboard) %>
-<br />
+</div>
+<div class="ui segment">
 <%= link_to 'Delete Billboard', @billboard, method: :delete %>
+</div>
