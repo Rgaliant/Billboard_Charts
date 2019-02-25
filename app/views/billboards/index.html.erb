@@ -5,11 +5,14 @@
 <h1>Click a Billboard to view details</h1>
 <div class="ui massive relaxed divided list">
 <% @billboards.each_with_index do |billboard| %>
+<div class="ui segment">
   <div class="item">
-    <i class="volume up icon"></i>
+    
     <div class="content">
-      <a class="header"><%= link_to billboard.name, billboard %></a>
+     <h2><i class="volume up icon"></i>
+     <a class="header"><%= link_to billboard.name, billboard %></a></h2>
       <div class="description">Click to view</div>
+      </div>
     </div>
   </div>
   <% end %>

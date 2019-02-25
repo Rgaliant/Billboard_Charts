@@ -3,5 +3,14 @@
 <%= form_for [@artist, @song] do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name, required: true, autofocus: true %>
+<br />
+  <%= f.label :release_date %>
+  <%= f.text_field :release_date %>
+  <br />
+
+  <div class="field">
+    <%= f.label :youtube_id %>
+    <%= f.text_field :youtube_id %>
+<br />
   <%= f.submit %>
 <% end %>

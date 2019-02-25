@@ -12,11 +12,11 @@ Weeks on Billboard:
 <div class="ui massive segment relaxed divided list"">
 <div class="item">
     <i class="music icon"></i>
-    <div class="content">
-      <a class="header">
-<%= song.name %>
+   <div class="content">
+      
+<h2><%= song.name %></h2>
+<iframe src='https://www.youtube.com/embed/<%= song.youtube_id %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
 
-</a>
 </div>
 </div>
 </div>

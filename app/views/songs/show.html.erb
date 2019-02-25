@@ -1,5 +1,10 @@
 <h1><%= @song.name %></h1>
 <hr />
+
+<iframe width="400" height="280" src='https://www.youtube.com/embed/<%= @song.youtube_id %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
+
 <p>What would you like to do?</p>
-<%= link_to 'Back To Artists', artist_songs_path(@artist) %>
+<%= link_to 'Edit Song', edit_artist_song_path([@artist, @song]) %> |
+<%= link_to 'Delete Song', [@artist, @song], method: :delete %> |
+<%= link_to 'Back To Songs', artist_songs_path(@artist) %> |
 <br />

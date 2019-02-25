@@ -1,3 +1,6 @@
+require 'rspotify'
+
+
 class ArtistsController < ApplicationController
   before_action :set_billboard
   before_action :set_artist, only: [:show, :update, :edit, :destroy]
@@ -40,6 +43,16 @@ class ArtistsController < ApplicationController
     redirect_to [@billboard, @artist]
   end
 
+
+
+
+
+
+
+
+
+
+
   private
 
   def set_billboard
@@ -52,7 +65,7 @@ class ArtistsController < ApplicationController
   end
 
   def artist_params
-    params.require(:artist).permit(:name, :genre, :avatar, :spot_on_charts, :weeks_on_charts, :about_artists)
+    params.require(:artist).permit(:name, :genre, :avatar, :spot_on_charts, :weeks_on_charts, :about_artists, :youtube_id)
   end
 
 

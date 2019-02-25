@@ -1,7 +1,16 @@
 <h1>Click a Song to view it's details</h1>
 <%= link_to 'New Song', new_artist_song_path %>
 <ul> 
+
 <% @artist.songs.each do |song| %>
-<%= link_to song.name, [@artist, song] %>
+<div class="ui segment">
+<h3><%= link_to song.name, [@artist, song] %> </h3>
+<div class="ui right floated content"><iframe src='https://www.youtube.com/embed/<%= song.youtube_id %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
+</div>
+<h4 class="ui right floated button">Release Date <%= song.release_date %></h4>
+<%= link_to 'Delete', [@billboard, @artist], method: :delete %> |
+<%= link_to 'View', [@artist, song] %>
+
+</div>
 <% end %>
 </ul>
