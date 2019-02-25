@@ -6,7 +6,7 @@
 <h1>Click an Artist to view their songs</h1>
 
 <% @billboard.artists.each do |artist| %>
-<div class="ui massive segment relaxed divided list"">
+<div class="ui massive segment relaxed divided list">
   <div class="ui two column very relaxed grid">
     <div class="column">
       <div class="ui segment">
@@ -17,24 +17,23 @@
           </h1>
           <a class="header">
           <h2><%= link_to artist.name, [@billboard, artist] %></h2>
+          
             <div class="description">
-              <h3><%= artist.genre %></h3>
-              <h4>Songs in the charts: <%= artist.songs.count %></h4>
-              <h4>Weeks on Billboard: <%= artist.weeks_on_charts %></h4>
-              <h4><%= link_to "Songs", [@billboard, artist] %></h4>
+              <%= artist.genre %></h3> |
+              Songs in the charts: <%= artist.songs.count %> |
+              Weeks on Billboard: <%= artist.weeks_on_charts %> |
+              <h4><%= link_to "Songs", [@billboard, artist] %>
             </div>
           </div>
           </a>
         </div>
       </div>
     <div class="column">
-      <div class="ui segment">
       
             <iframe width="400" height="280" src='https://www.youtube.com/embed/<%= artist.youtube_id %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
-      <br />
-      <%= artist.about_artists %>
       
-     </div>
+      
+     
     </div>
   </div>
 </div>

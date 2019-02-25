@@ -1,11 +1,15 @@
-<h1><%= @artist.name %> | # <%= @artist.spot_on_charts %></h1>
-
-
-
+<div class="ui raised segment">
+<h1><%= @artist.name %> | # <%= @artist.spot_on_charts %> Spot on Charts |
 Weeks on Billboard:
 <%= @artist.weeks_on_charts %>
+</h1>
 <hr />
+<br />
+      <%= @artist.about_artists %>
 
+<br />
+
+</div>
 
 
 <% @artist.songs.each do |song| %>
