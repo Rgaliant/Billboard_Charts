@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
   # before_action :set_billboard
-  before_action :set_artist
+  before_action :set_artist, except: :view_songs
   before_action :set_song, only: [:show, :update, :edit, :destroy]
   
   def index
@@ -8,6 +8,10 @@ class SongsController < ApplicationController
   end
 
   def show
+  end
+
+  def view_songs
+    @view_songs = Song.all  
   end
 
   def new

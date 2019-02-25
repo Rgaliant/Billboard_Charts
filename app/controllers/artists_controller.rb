@@ -2,7 +2,7 @@ require 'rspotify'
 
 
 class ArtistsController < ApplicationController
-  before_action :set_billboard
+  before_action :set_billboard, except: :view_artists
   before_action :set_artist, only: [:show, :update, :edit, :destroy]
   
   def index
@@ -10,6 +10,10 @@ class ArtistsController < ApplicationController
   end
 
   def show
+  end
+
+  def view_artists
+    @artist_view = Artist.all  
   end
 
   def new

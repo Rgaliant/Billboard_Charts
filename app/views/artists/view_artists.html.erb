@@ -1,0 +1,27 @@
+<div class="artist-view-container">
+<div class="ui container">
+<h1>All Artists on Billboards</h1>
+
+<hr />
+
+  <% @artist_view.each do |artist| %>
+  <br>
+  <br>
+  <div class="ui massive segment relaxed divided list">
+    <div class="content"> 
+         <p><%= artist.name %></p> 
+        <div class="image">
+        <iframe src='https://www.youtube.com/embed/<%= artist.youtube_id %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
+        </div>
+    </div>
+  <div class="ui horizontal list">
+    <div class="item">
+    <%= artist.spot_on_charts %></div> <br />
+   </div>
+</div>
+
+  <% end %>
+</div>
+</div>
+
+
