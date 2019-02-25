@@ -8,7 +8,7 @@
 <div class="ui right floated content"><iframe src='https://www.youtube.com/embed/<%= song.youtube_id %>?rel=0&autoplay=<%= params[:autoplay] || 0 %>' frameborder='0' allowfullscreen></iframe>
 </div>
 <h4 class="ui right floated button">Release Date <%= song.release_date %></h4>
-<%= link_to 'Delete', [@billboard, @artist], method: :delete %> |
+<%= link_to 'Delete', [@artist, song], method: :delete %> |
 <%= link_to 'View', [@artist, song] %>
 
 </div>

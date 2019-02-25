@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'billboards#index'
+  root "billboards#index"
+  devise_for :users
 
   resources :billboards do
   resources :artists
@@ -8,6 +9,5 @@ Rails.application.routes.draw do
   resources :artists do
     resources :songs
   end
-
   
 end

@@ -21,7 +21,7 @@ before_action :set_billboard, only: [:show, :update, :edit, :destroy]
     @billboard = Billboard.new(billboard_params)
 
     if @billboard.save
-      redirect_to @billboard
+      redirect_to root_path
     else
       render :new
     end
